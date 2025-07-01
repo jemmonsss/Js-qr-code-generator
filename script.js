@@ -7,11 +7,11 @@ const qrCode = new QRCodeStyling({
     errorCorrectionLevel: "M",
   },
   dotsOptions: {
-    color: "#000000",
+    color: "#000000", // default foreground black
     type: "rounded"
   },
   backgroundOptions: {
-    color: "#ffffff",
+    color: "#ffffff", // default background white
   },
   imageOptions: {
     crossOrigin: "anonymous",
@@ -34,8 +34,8 @@ function updateQRCode() {
   const data = dataInput.value || " ";
   const errorCorrectionLevel = errorCorrectionInput.value;
   const size = Math.max(100, parseInt(sizeInput.value) || 300);
-  const foregroundColor = foregroundInput.value;
-  const backgroundColor = backgroundInput.value;
+  const foregroundColor = foregroundInput.value || "#000000";
+  const backgroundColor = backgroundInput.value || "#ffffff";
 
   qrCode.update({
     width: size,
