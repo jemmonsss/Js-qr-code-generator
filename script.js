@@ -5,11 +5,11 @@ const qrCode = new QRCodeStyling({
   data: "",
   image: "",
   dotsOptions: {
-    color: "#ffffff",
+    color: "#a78bfa",
     type: "rounded"
   },
   backgroundOptions: {
-    color: "#0f172a",
+    color: "#2c2c3c",
   },
   imageOptions: {
     crossOrigin: "anonymous",
@@ -55,7 +55,6 @@ function updateQRCode() {
   input.addEventListener("input", updateQRCode);
 });
 
-// Logo live update
 logoInput.addEventListener("change", (e) => {
   const file = e.target.files[0];
   if (!file) {
