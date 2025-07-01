@@ -13,7 +13,7 @@
     <h1>QR Code Generator</h1>
 
     <label for="data">Content</label>
-    <input id="data" type="text" placeholder="Enter URL, text, etc.">
+    <input id="data" type="text" placeholder="Enter URL, text, etc." value="https://github.com">
 
     <label for="errorCorrection">Error Correction</label>
     <select id="errorCorrection">
@@ -24,13 +24,13 @@
     </select>
 
     <label for="size">Size (px)</label>
-    <input id="size" type="number" value="300">
+    <input id="size" type="number" value="300" min="100" max="1000">
 
-    <label for="foreground">Foreground Color</label>
-    <input id="foreground" type="color" value="#c084fc">
+    <label for="foreground">QR Color</label>
+    <input id="foreground" type="color" value="#000000">
 
     <label for="background">Background Color</label>
-    <input id="background" type="color" value="#000000">
+    <input id="background" type="color" value="#ffffff">
 
     <label for="logo">Logo (optional)</label>
     <input id="logo" type="file" accept="image/*">

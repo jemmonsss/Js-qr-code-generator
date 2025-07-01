@@ -2,18 +2,20 @@ const qrCode = new QRCodeStyling({
   width: 300,
   height: 300,
   type: "canvas",
-  data: "",
-  image: "",
+  data: "https://github.com",
+  qrOptions: {
+    errorCorrectionLevel: "M",
+  },
   dotsOptions: {
-    color: "#c084fc",
+    color: "#000000",
     type: "rounded"
   },
   backgroundOptions: {
-    color: "#000000",
+    color: "#ffffff",
   },
   imageOptions: {
     crossOrigin: "anonymous",
-    margin: 10
+    margin: 8
   }
 });
 
@@ -31,7 +33,7 @@ const downloadButton = document.getElementById("download");
 function updateQRCode() {
   const data = dataInput.value || " ";
   const errorCorrectionLevel = errorCorrectionInput.value;
-  const size = parseInt(sizeInput.value) || 300;
+  const size = Math.max(100, parseInt(sizeInput.value) || 300);
   const foregroundColor = foregroundInput.value;
   const backgroundColor = backgroundInput.value;
 
@@ -39,20 +41,16 @@ function updateQRCode() {
     width: size,
     height: size,
     data: data,
-    qrOptions: {
-      errorCorrectionLevel: errorCorrectionLevel
-    },
-    dotsOptions: {
-      color: foregroundColor
-    },
-    backgroundOptions: {
-      color: backgroundColor
-    }
+    qrOptions: { errorCorrectionLevel },
+    dotsOptions: { color: foregroundColor },
+    backgroundOptions: { color: backgroundColor },
   });
 }
 
 [dataInput, errorCorrectionInput, sizeInput, foregroundInput, backgroundInput].forEach(input => {
-  input.addEventListener("input", updateQRCode);
+  input.addEventListener("input", () => {
+    updateQRCode();
+  });
 });
 
 logoInput.addEventListener("change", (e) => {
@@ -72,5 +70,5 @@ downloadButton.addEventListener("click", () => {
   qrCode.download({ name: "qr-code", extension: "png" });
 });
 
-// Generate initially
+// Initial generation
 updateQRCode();
