@@ -5,11 +5,11 @@ const qrCode = new QRCodeStyling({
   data: "",
   image: "",
   dotsOptions: {
-    color: "#a78bfa",
+    color: "#c084fc",
     type: "rounded"
   },
   backgroundOptions: {
-    color: "#2c2c3c",
+    color: "#000000",
   },
   imageOptions: {
     crossOrigin: "anonymous",
@@ -29,7 +29,7 @@ const logoInput = document.getElementById("logo");
 const downloadButton = document.getElementById("download");
 
 function updateQRCode() {
-  const data = dataInput.value;
+  const data = dataInput.value || " ";
   const errorCorrectionLevel = errorCorrectionInput.value;
   const size = parseInt(sizeInput.value) || 300;
   const foregroundColor = foregroundInput.value;
@@ -72,5 +72,5 @@ downloadButton.addEventListener("click", () => {
   qrCode.download({ name: "qr-code", extension: "png" });
 });
 
-// Initial generation
+// Generate initially
 updateQRCode();

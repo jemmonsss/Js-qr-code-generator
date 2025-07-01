@@ -7,8 +7,8 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #1e1e2f;
-  color: #e5e7eb;
+  background: #000000;
+  color: #f3f4f6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,12 +17,12 @@ body {
 }
 
 .container {
-  background: #2c2c3c;
+  background: #0a0a0a;
   border-radius: 16px;
   padding: 24px;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 30px rgba(192, 132, 252, 0.3);
 }
 
 h1 {
@@ -30,7 +30,7 @@ h1 {
   font-weight: 700;
   margin-bottom: 20px;
   font-size: 1.6rem;
-  color: #a78bfa;
+  color: #c084fc;
 }
 
 label {
@@ -47,7 +47,7 @@ select {
   margin: 6px 0 14px 0;
   border: none;
   border-radius: 8px;
-  background: #3c3c4f;
+  background: #1f1f1f;
   color: #f9fafb;
   font-size: 1rem;
   transition: background 0.3s, box-shadow 0.3s;
@@ -56,9 +56,9 @@ select {
 input[type="text"]:focus,
 input[type="number"]:focus,
 select:focus {
-  background: #4b4b63;
+  background: #2a2a2a;
   outline: none;
-  box-shadow: 0 0 0 2px #a78bfa;
+  box-shadow: 0 0 0 2px #c084fc;
 }
 
 input[type="color"] {
@@ -68,6 +68,7 @@ input[type="color"] {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  background: none;
 }
 
 button {
@@ -79,13 +80,14 @@ button {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s, transform 0.1s;
-  background: #7c3aed;
-  color: #fff;
+  background: #c084fc;
+  color: #000000;
+  transition: background 0.3s, transform 0.1s, box-shadow 0.3s;
 }
 
 button:hover {
-  background: #6d28d9;
+  background: #a855f7;
+  box-shadow: 0 0 15px #a855f7;
 }
 
 button:active {
