@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Advanced QR Code Generator</h1>
+
+    <label for="data">Content</label>
+    <input id="data" type="text" placeholder="Enter URL, text, etc.">
+
+    <label for="errorCorrection">Error Correction</label>
+    <select id="errorCorrection">
+      <option value="L">Low (L)</option>
+      <option value="M" selected>Medium (M)</option>
+      <option value="Q">Quartile (Q)</option>
+      <option value="H">High (H)</option>
+    </select>
+
+    <label for="size">Size (px)</label>
+    <input id="size" type="number" value="300">
+
+    <label for="foreground">Foreground Color</label>
+    <input id="foreground" type="color" value="#ffffff">
+
+    <label for="background">Background Color</label>
+    <input id="background" type="color" value="#0f172a">
+
+    <label for="logo">Logo (optional)</label>
+    <input id="logo" type="file" accept="image/*">
+
+    <div id="qrcode"></div>
+
+    <button id="generate">Generate</button>
+    <button id="download">Download PNG</button>
+    <button id="lightExport">Export Light PNG</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

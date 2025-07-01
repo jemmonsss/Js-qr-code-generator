@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Generator</title>
+  <link href="style.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+</head>
+<body class="bg-gray-900 text-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
+  <div class="max-w-md w-full space-y-6">
+    <h1 class="text-3xl font-bold text-center">Advanced QR Code Generator</h1>
+
+    <div class="space-y-2">
+      <label>Content</label>
+      <input id="data" type="text" placeholder="Enter text or URL..." class="w-full p-2 rounded bg-gray-800 border border-gray-700">
+    </div>
+
+    <div class="space-y-2">
+      <label>Error Correction</label>
+      <select id="errorCorrection" class="w-full p-2 rounded bg-gray-800 border border-gray-700">
+        <option value="L">Low (L)</option>
+        <option value="M" selected>Medium (M)</option>
+        <option value="Q">Quartile (Q)</option>
+        <option value="H">High (H)</option>
+      </select>
+    </div>
+
+    <div class="space-y-2">
+      <label>Size</label>
+      <input id="size" type="number" value="300" class="w-full p-2 rounded bg-gray-800 border border-gray-700">
+    </div>
+
+    <div class="flex justify-between gap-2">
+      <div>
+        <label>Foreground</label>
+        <input id="foreground" type="color" value="#ffffff">
+      </div>
+      <div>
+        <label>Background</label>
+        <input id="background" type="color" value="#111827">
+      </div>
+    </div>
+
+    <div class="space-y-2">
+      <label>Logo (optional)</label>
+      <input id="logo" type="file" accept="image/*" class="w-full p-2 rounded bg-gray-800 border border-gray-700">
+    </div>
+
+    <div id="qrcode" class="flex justify-center p-4 bg-gray-800 rounded"></div>
+
+    <div class="flex justify-between gap-2">
+      <button id="generate" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-full">Generate</button>
+      <button id="download" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full">Download PNG</button>
+      <button id="lightExport" class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full">Export Light PNG</button>
+    </div>
+
+    <p class="text-sm text-center text-gray-400">Dark mode by default. Light export only affects the image.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
