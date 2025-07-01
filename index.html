@@ -1,61 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>QR Code Generator</title>
-  <link href="style.css" rel="stylesheet" />
+  <title>Advanced QR Code Generator</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
 </head>
-<body class="bg-gray-900 text-gray-100 flex flex-col items-center justify-center min-h-screen p-4">
-  <div class="max-w-md w-full space-y-6">
-    <h1 class="text-3xl font-bold text-center">Advanced QR Code Generator</h1>
+<body>
+  <div class="container">
+    <h1>QR Code Generator</h1>
 
-    <div class="space-y-2">
-      <label>Content</label>
-      <input id="data" type="text" placeholder="Enter text or URL..." class="w-full p-2 rounded bg-gray-800 border border-gray-700">
-    </div>
+    <label for="data">Content</label>
+    <input id="data" type="text" placeholder="Enter URL, text, etc.">
 
-    <div class="space-y-2">
-      <label>Error Correction</label>
-      <select id="errorCorrection" class="w-full p-2 rounded bg-gray-800 border border-gray-700">
-        <option value="L">Low (L)</option>
-        <option value="M" selected>Medium (M)</option>
-        <option value="Q">Quartile (Q)</option>
-        <option value="H">High (H)</option>
-      </select>
-    </div>
+    <label for="errorCorrection">Error Correction</label>
+    <select id="errorCorrection">
+      <option value="L">Low</option>
+      <option value="M" selected>Medium</option>
+      <option value="Q">Quartile</option>
+      <option value="H">High</option>
+    </select>
 
-    <div class="space-y-2">
-      <label>Size</label>
-      <input id="size" type="number" value="300" class="w-full p-2 rounded bg-gray-800 border border-gray-700">
-    </div>
+    <label for="size">Size (px)</label>
+    <input id="size" type="number" value="300">
 
-    <div class="flex justify-between gap-2">
-      <div>
-        <label>Foreground</label>
-        <input id="foreground" type="color" value="#ffffff">
-      </div>
-      <div>
-        <label>Background</label>
-        <input id="background" type="color" value="#111827">
-      </div>
-    </div>
+    <label for="foreground">Foreground Color</label>
+    <input id="foreground" type="color" value="#ffffff">
 
-    <div class="space-y-2">
-      <label>Logo (optional)</label>
-      <input id="logo" type="file" accept="image/*" class="w-full p-2 rounded bg-gray-800 border border-gray-700">
-    </div>
+    <label for="background">Background Color</label>
+    <input id="background" type="color" value="#0f172a">
 
-    <div id="qrcode" class="flex justify-center p-4 bg-gray-800 rounded"></div>
+    <label for="logo">Logo (optional)</label>
+    <input id="logo" type="file" accept="image/*">
 
-    <div class="flex justify-between gap-2">
-      <button id="generate" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded w-full">Generate</button>
-      <button id="download" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded w-full">Download PNG</button>
-      <button id="lightExport" class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full">Export Light PNG</button>
-    </div>
+    <div id="qrcode" class="qr-container"></div>
 
-    <p class="text-sm text-center text-gray-400">Dark mode by default. Light export only affects the image.</p>
+    <button id="generate">Generate QR</button>
+    <button id="download">Download PNG</button>
+    <button id="lightExport">Export Light PNG</button>
   </div>
 
   <script src="script.js"></script>
